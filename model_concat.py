@@ -9,10 +9,10 @@ def concat_sample_models(model: str, work_dir: str):
     save_path = os.path.join(work_dir, f'models/samples/{model}')
 
     # load each information
-    netG_state_dict = torch.load(os.path.join(save_path, f'{model}_generator.pt'), map_location=torch.device('cpu'),weights_only=True)
-    netD_state_dict = torch.load(os.path.join(save_path, f'{model}_discriminator.pt'), map_location=torch.device('cpu'),weights_only=True)
-    g_opt_state_dict = torch.load(os.path.join(save_path, f'{model}_g_optimizer.pt'), map_location=torch.device('cpu'),weights_only=True)
-    d_opt_state_dict = torch.load(os.path.join(save_path, f'{model}_d_optimizer.pt'), map_location=torch.device('cpu'),weights_only=True)
+    netG_state_dict = torch.load(os.path.join(save_path, f'{model}_generator.pt'))
+    netD_state_dict = torch.load(os.path.join(save_path, f'{model}_discriminator.pt'))
+    g_opt_state_dict = torch.load(os.path.join(save_path, f'{model}_g_optimizer.pt'))
+    d_opt_state_dict = torch.load(os.path.join(save_path, f'{model}_d_optimizer.pt'))
 
     # save in bulk
     torch.save(
